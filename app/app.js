@@ -14,4 +14,8 @@ $(() => {
   $('#sign-out-button').on('click', authEvents.onSignOut)
   $('#show-change-password-form-button').on('click', authUi.onShowChangePasswordFormButton)
   $('#change-password-div').on('submit', '#change-password-form', authEvents.onChangePassword)
+
+  // Create resources listeners
+  $('#create-restaurant-form').on('submit', restaurantEvents.onCreateRestaurant)
+  $('#index-restaurants-button').on('click', restaurantEvents.onIndexRestaurants)
 })

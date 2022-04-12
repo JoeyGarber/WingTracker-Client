@@ -11,8 +11,11 @@ const onSignUpFailure = function () {
 
 const onSignInSuccess = function (data) {
   console.log('Sign In Worked')
+  console.log(data)
   $('form').trigger('reset')
+  $('#auth-forms').hide()
   $('.topnav').css('display', 'block')
+  $('#resource-forms').show()
   store.user = data.user
 }
 
@@ -24,7 +27,9 @@ const onSignOutSuccess = function () {
   console.log('Sign Out Worked')
   $('.topnav').css('display', 'none')
   store.user = null
+  $('#auth-forms').show()
   $('#change-password-form').hide()
+  $('#resource-forms').show().hide()
 }
 
 const onSignOutFailure = function () {
