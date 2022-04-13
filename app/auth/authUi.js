@@ -1,16 +1,16 @@
 const store = require('../store')
 
 const onSignUpSuccess = function () {
-  console.log('Sign Up Worked')
+  $('#message').html('<p>Sign Up Success</p>')
   $('form').trigger('reset')
 }
 
 const onSignUpFailure = function () {
-  console.log('Sign Up Failed')
+  $('#message').html('<p>Sign Up Failed</p>')
 }
 
 const onSignInSuccess = function (data) {
-  console.log('Sign In Worked')
+  $('#message').html('<p>Sign In Success</p>')
   console.log(data)
   $('form').trigger('reset')
   $('#auth-forms').hide()
@@ -20,11 +20,11 @@ const onSignInSuccess = function (data) {
 }
 
 const onSignInFailure = function () {
-  console.log('Sign In Failed')
+  $('#message').html('<p>Sign In Failed</p>')
 }
 
 const onSignOutSuccess = function () {
-  console.log('Sign Out Worked')
+  $('#message').html('<p>Sign Out Success</p>')
   $('.topnav').css('display', 'none')
   store.user = null
   $('#auth-forms').show()
@@ -33,7 +33,7 @@ const onSignOutSuccess = function () {
 }
 
 const onSignOutFailure = function () {
-  console.log('Sign Out Failed')
+  $('#message').html('<p>Sign Out Failed</p>')
 }
 
 const onShowChangePasswordFormButton = function () {
@@ -45,11 +45,11 @@ const onShowChangePasswordFormButton = function () {
 }
 
 const onChangePasswordSuccess = function () {
-  console.log('Password changed')
+  $('#message').html('<p>Password Changed</p>')
 }
 
 const onChangePasswordFailure = function () {
-  console.log('Password change failed')
+  $('#message').html('<p>Password Change Failed</p>')
 }
 
 module.exports = {

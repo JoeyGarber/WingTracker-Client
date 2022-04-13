@@ -1,33 +1,36 @@
 const getFormFields = require('../../lib/get-form-fields')
-const api = require('./authApi.js')
-const ui = require('./authUi.js')
+const authApi = require('./authApi.js')
+const authUi = require('./authUi.js')
+const restaurantEvents = require('../restaurant/restaurantEvents.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  api.signUp(getFormFields(event.target))
-    .then(ui.onSignUpSuccess)
-    .catch(ui.onSignUpFailure)
+  authApi.signUp(getFormFields(event.target))
+    .then(authUi.onSignUpSuccess)
+    .catch(authUi.onSignUpFailure)
 }
 
 const onSignIn = function (event) {
   event.preventDefault()
-  api.signIn(getFormFields(event.target))
-    .then(ui.onSignInSuccess)
-    .catch(ui.onSignInFailure)
+  const prevDefault = event
+  authApi.signIn(getFormFields(event.target))
+    .then(authUi.onSignInSuccess)
+    .then(() => restaurantEvents.onIndexRestaurants(prevDefault))
+    .catch(authUi.onSignInFailure)
 }
 
 const onSignOut = function (event) {
   event.preventDefault()
-  api.signOut()
-    .then(ui.onSignOutSuccess)
-    .catch(ui.onSignOutFailure)
+  authApi.signOut()
+    .then(authUi.onSignOutSuccess)
+    .catch(authUi.onSignOutFailure)
 }
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  api.changePassword(getFormFields(event.target))
-    .then(ui.onChangePasswordSuccess)
-    .catch(ui.onChangePasswordFailure)
+  authApi.changePassword(getFormFields(event.target))
+    .then(authUi.onChangePasswordSuccess)
+    .catch(authUi.onChangePasswordFailure)
 }
 
 module.exports = {
