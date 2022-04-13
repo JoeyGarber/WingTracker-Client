@@ -15,7 +15,7 @@ const showUpdateRestaurantForm = function (event) {
   $(`#restaurant-content-${tableRowNum}`).html(formHtml)
 }
 
-const showNewWingForm = function (event) {
+const showCreateWingForm = function (event) {
   const restId = $(event.target).data('restid')
   const tableRowNum = $(event.target).data('table-row')
   const formHtml = `
@@ -33,5 +33,5 @@ const showNewWingForm = function (event) {
 
 module.exports = {
   showUpdateRestaurantForm,
-  showNewWingForm
+  showCreateWingForm
 }

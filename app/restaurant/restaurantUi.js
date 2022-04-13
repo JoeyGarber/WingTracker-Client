@@ -20,22 +20,31 @@ const onIndexRestaurantSuccess = function (response) {
     const restName = response.restaurants[i].name
     const restId = response.restaurants[i]._id
     const restWebsite = response.restaurants[i].website
-    // const wings = response.restaurants[i].wings
+    const wings = response.restaurants[i].wings
 
-    // const wingName = wings[0].name
-    // console.log(wingName)
-    // const wingSpiciness = wings[0].spiciness
-    // console.log(wingSpiciness)
+    // I'm running into an issue here because not all the restaurants are going to have wings. Some are going to have undefined fields for their wings. And jQuery can't read those.
 
     data += `
       <tr id="restaurant-content-${i}">
         <td class="show-new-wing-form" data-table-row="${i}" data-restid="${restId}">${restName}</td>
         <td>${restWebsite}</td>
-        <td><table>
-        <tr>
-          <td>test</td>
-          <td>test</td>
-        </tr>
+        <td><table><tr>
+        <th>Name</th><th>Spiciness</th><th>Quality</th>
+        </tr>`
+
+    for (let j = 0; j < wings.length; j++) {
+      if (wings.length !== 0) {
+        data += `
+          <tr>
+            <td>${wings[j].name}</td>
+            <td>${wings[j].spiciness}</td>
+            <td>${wings[j].quality}</td>
+          </tr>
+            `
+      }
+    }
+
+    data += `
         </table></td>
         <td><button class="show-update-restaurant-button" data-restid="${restId}" data-table-row="${i}">Update Restaurant</button></td>
       </tr>`

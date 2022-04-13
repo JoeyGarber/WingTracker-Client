@@ -24,6 +24,6 @@ $(() => {
   $('#wings-table').on('submit', '#update-restaurant-form', restaurantEvents.onUpdateRestaurant)
 
   // Wing listeners
-  $('#wings-table').on('click', '.show-new-wing-form', helpers.showNewWingForm)
-  $('#wings-table').on('submit', '#new-wing-form', wingEvents.onNewWing)
+  $('#wings-table').on('click', '.show-new-wing-form', helpers.showCreateWingForm)
+  $('#wings-table').on('submit', '#new-wing-form', wingEvents.onCreateWing)
 })
