@@ -24,7 +24,20 @@ const indexRestaurants = function (data) {
   })
 }
 
+const updateRestaurant = function (data, id) {
+  return $.ajax({
+    url: config.apiUrl + '/restaurants/' + id,
+    method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   createRestaurant,
-  indexRestaurants
+  indexRestaurants,
+  updateRestaurant
 }

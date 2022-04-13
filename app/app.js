@@ -3,6 +3,7 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+const helpers = require('./helpers.js')
 const authEvents = require('./auth/authEvents.js')
 const authUi = require('./auth/authUi')
 const restaurantEvents = require('./restaurant/restaurantEvents.js')
@@ -18,4 +19,6 @@ $(() => {
   // Create resources listeners
   $('#create-restaurant-form').on('submit', restaurantEvents.onCreateRestaurant)
   $('#index-restaurants-button').on('click', restaurantEvents.onIndexRestaurants)
+  $('#wings-table').on('click', '.show-update-restaurant-button', helpers.showUpdateForm)
+  $('#wings-table').on('submit', '#update-restaurant-form', restaurantEvents.onUpdateRestaurant)
 })

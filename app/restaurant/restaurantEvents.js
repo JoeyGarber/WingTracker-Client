@@ -17,7 +17,19 @@ const onIndexRestaurants = function (event) {
     .catch(restaurantUi.onIndexRestaurantFailure)
 }
 
+const onUpdateRestaurant = function (event) {
+  event.preventDefault()
+  const restId = $(event.target).data('restid')
+  const data = getFormFields(event.target)
+  console.log(data)
+  console.log(restId)
+  restaurantApi.updateRestaurant(data, restId)
+    .then(restaurantUi.onUpdateRestaurantSuccess)
+    .catch(restaurantUi.onRestaurantUpdateFailure)
+}
+
 module.exports = {
   onCreateRestaurant,
-  onIndexRestaurants
+  onIndexRestaurants,
+  onUpdateRestaurant
 }

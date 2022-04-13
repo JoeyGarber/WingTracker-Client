@@ -23,14 +23,14 @@ const onIndexRestaurantSuccess = function (response) {
     const wings = response.restaurants[i].wings
 
     data += `
-      <tr id="wings-content">
-        <td data-restId="${restId}">${restName}</td>
+      <tr id="wings-content-${i}">
+        <td data-restid="${restId}">${restName}</td>
         <td>${restWebsite}</td>
         <td><table>
           <td>${wings.name}</td>
           <td>${wings.spiciness}</td>
         </table></td>
-        <td><button id="update-restaurant" data-restId="${restId}">Update Restaurant</button></td>
+        <td><button class="show-update-restaurant-button" data-restid="${restId}" data-table-row="${i}">Update Restaurant</button></td>
       </tr>`
   }
   $('#wings-table').html(data)
@@ -40,9 +40,19 @@ const onIndexRestaurantFailure = function () {
   $('#message').html('<p>Restaurant Index Failed</p>')
 }
 
+const onRestaurantUpdateSuccess = function () {
+  $('#message').html('<p>Restaurant Update Succeeded</p>')
+}
+
+const onRestaurantUpdateFailure = function () {
+  $('#message').html('<p>Restaurant Update Failed</p>')
+}
+
 module.exports = {
   onCreateRestaurantSuccess,
   onCreateRestaurantFailure,
   onIndexRestaurantSuccess,
-  onIndexRestaurantFailure
+  onIndexRestaurantFailure,
+  onRestaurantUpdateSuccess,
+  onRestaurantUpdateFailure
 }
