@@ -22,13 +22,20 @@ const onIndexRestaurantSuccess = function (response) {
     const restWebsite = response.restaurants[i].website
     const wings = response.restaurants[i].wings
 
+    const wingName = wings[0].name
+    console.log(wingName)
+    const wingSpiciness = wings[0].spiciness
+    console.log(wingSpiciness)
+
     data += `
-      <tr id="wings-content-${i}">
-        <td data-restid="${restId}">${restName}</td>
+      <tr id="restaurant-content-${i}">
+        <td class="show-new-wing-form" data-table-row="${i}" data-restid="${restId}">${restName}</td>
         <td>${restWebsite}</td>
-        <td><table>
-          <td>${wings.name}</td>
-          <td>${wings.spiciness}</td>
+        <td><table id="wings-content >
+        <tr>
+          <td>${wingName}</td>
+          <td>${wingSpiciness}</td>
+        </tr>
         </table></td>
         <td><button class="show-update-restaurant-button" data-restid="${restId}" data-table-row="${i}">Update Restaurant</button></td>
       </tr>`

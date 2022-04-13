@@ -1,4 +1,4 @@
-const showUpdateForm = function (event) {
+const showUpdateRestaurantForm = function (event) {
   event.preventDefault()
   // get the id of the rest it's going to update
   const restId = $(event.target).data('restid')
@@ -12,9 +12,26 @@ const showUpdateForm = function (event) {
     <button id="update-restaurant-button" type="submit">Submit</button>
 </form></td>
 `
-  $(`#wings-content-${tableRowNum}`).html(formHtml)
+  $(`#restaurant-content-${tableRowNum}`).html(formHtml)
+}
+
+const showNewWingForm = function (event) {
+  const restId = $(event.target).data('restid')
+  const tableRowNum = $(event.target).data('table-row')
+  const formHtml = `
+  <td><form id="new-wing-form" data-restid="${restId}">
+    <input name="wing[name]" type="text" placeholder="New Wing Name">
+    <input name="wing[spiciness]" type="number" id="spiciness" min="1" max="100">
+    <label for="spiciness">Spiciness (1-100)</label>
+    <input name="wing[quality]" type="number" id="quality" min="1" max="100">
+    <label for="quality">Quality (1-100)</label>
+    <button id="update-restaurant-button" type="submit">Create Wing</button>
+</form></td>
+`
+  $(`#restaurant-content-${tableRowNum}`).html(formHtml)
 }
 
 module.exports = {
-  showUpdateForm
+  showUpdateRestaurantForm,
+  showNewWingForm
 }
