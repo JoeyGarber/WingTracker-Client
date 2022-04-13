@@ -19,12 +19,12 @@ const onIndexRestaurants = function (event) {
 
 const onUpdateRestaurant = function (event) {
   event.preventDefault()
+  const prevDefault = event
   const restId = $(event.target).data('restid')
   const data = getFormFields(event.target)
-  console.log(data)
-  console.log(restId)
   restaurantApi.updateRestaurant(data, restId)
-    .then(restaurantUi.onUpdateRestaurantSuccess)
+    .then(() => onIndexRestaurants(prevDefault))
+    .then(restaurantUi.onRestaurantUpdateSuccess)
     .catch(restaurantUi.onRestaurantUpdateFailure)
 }
 
