@@ -4,8 +4,10 @@ const restaurantUi = require('./restaurantUi.js')
 
 const onCreateRestaurant = function (event) {
   event.preventDefault()
+  const prevDefaultAble = event
   restaurantApi.createRestaurant(getFormFields(event.target))
     .then(restaurantUi.onCreateRestaurantSuccess)
+    .then(() => onIndexRestaurants(prevDefaultAble))
     .catch(restaurantUi.onCreateRestaurantFailure)
 }
 
@@ -19,11 +21,11 @@ const onIndexRestaurants = function (event) {
 
 const onUpdateRestaurant = function (event) {
   event.preventDefault()
-  const prevDefault = event
+  const prevDefaultAble = event
   const restId = $(event.target).data('restid')
   const data = getFormFields(event.target)
   restaurantApi.updateRestaurant(data, restId)
-    .then(() => onIndexRestaurants(prevDefault))
+    .then(() => onIndexRestaurants(prevDefaultAble))
     .then(restaurantUi.onRestaurantUpdateSuccess)
     .catch(restaurantUi.onRestaurantUpdateFailure)
 }

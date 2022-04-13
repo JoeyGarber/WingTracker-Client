@@ -16,6 +16,7 @@ const onSignInSuccess = function (data) {
   $('#auth-forms').hide()
   $('.topnav').css('display', 'block')
   $('#resource-forms').show()
+  $('#wings-table').show()
   store.user = data.user
 }
 
