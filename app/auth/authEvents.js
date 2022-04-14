@@ -5,7 +5,9 @@ const restaurantEvents = require('../restaurant/restaurantEvents.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
+  const prevDefault = event
   authApi.signUp(getFormFields(event.target))
+    .then(() => onSignIn(prevDefault))
     .then(authUi.onSignUpSuccess)
     .catch(authUi.onSignUpFailure)
 }
