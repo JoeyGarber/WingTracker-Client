@@ -4,6 +4,14 @@
     display: none;
 }
 
+#not-navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
 #resource-forms {
     display: none;
 }

@@ -15,50 +15,51 @@
       <div class="topnav">
         <button id="sign-out-button" type="button">Sign Out</button>
         <button id="show-change-password-form-button" type="button">Change Password</button>
-        <button id="index-restaurants-button">Index Restaurants</button>
       </div>
-      <h1>WingRanker</h1>
-      <h5>By Joey Garber</h5>
-      <p id="memo">Just click on a restaurant or wing to edit or delete it!</p>
-      <div id="auth-forms">
-        <div>
-          <form id="sign-in-form">
-            <h4>Sign In</h4>
-            <input name="credentials[email]" type="email" placeholder="Email">
-            <input name="credentials[password]" type="password" placeholder="Password">
-            <button type="submit">Sign In</button>
-          </form>
-          <hr>
-          <form id="sign-up-form">
-            <h4>Sign Up</h4>
-            <input name="credentials[email]" type="email" placeholder="Email">
-            <input name="credentials[password]" type="password" placeholder="Password">
-            <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
-            <button type="submit">Sign Up</button>
-          </form>
-          <hr>
-          <div id="change-password-div"></div>
+        <div id="not-navbar">
+        <h1>WingRanker</h1>
+        <h5>By Joey Garber</h5>
+        <p id="memo">Just click on a restaurant or wing to edit or delete it!</p>
+        <div id="auth-forms">
+          <div>
+            <form id="sign-in-form">
+              <h4>Sign In</h4>
+              <input name="credentials[email]" type="email" placeholder="Email">
+              <input name="credentials[password]" type="password" placeholder="Password">
+              <button type="submit">Sign In</button>
+            </form>
+            <hr>
+            <form id="sign-up-form">
+              <h4>Sign Up</h4>
+              <input name="credentials[email]" type="email" placeholder="Email">
+              <input name="credentials[password]" type="password" placeholder="Password">
+              <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+              <button type="submit">Sign Up</button>
+            </form>
+            <hr>
+            <div id="change-password-div"></div>
+          </div>
         </div>
-      </div>
-      <div id="resource-forms">
-        <form id="create-restaurant-form">
-          <h4>Create Restaurant</h4>
-          <input name="restaurant[name]" type="text" placeholder="Restaurant Name">
-          <input name="restaurant[website]" type="text" placeholder="Restaurant website (optional)">
-          <button type="submit">Create Restaurant</button>
-        </form>
-      </div>
-      <input type="text" id="searchbar" placeholder="Restaurant Search">
+        <div id="resource-forms">
+          <form id="create-restaurant-form">
+            <h4>Create Restaurant</h4>
+            <input name="restaurant[name]" type="text" placeholder="Restaurant Name">
+            <input name="restaurant[website]" type="text" placeholder="Restaurant website (optional)">
+            <button type="submit">Create Restaurant</button>
+          </form>
+        </div>
+        <input type="text" id="searchbar" placeholder="Restaurant Search">
 
-      <table id="wings-table">
-        <tr>
-          <th>Wing Flavor</th>
-          <th>Restaurant</th>
-          <th>Website</th>
-          <th>Quality</th>
-          <th>Spiciness</th>
-        </tr>
-      </table>
-      <p id="message"></p>
+        <table id="wings-table">
+          <tr>
+            <th>Wing Flavor</th>
+            <th>Restaurant</th>
+            <th>Website</th>
+            <th>Quality</th>
+            <th>Spiciness</th>
+          </tr>
+        </table>
+        <p id="message"></p>
+      </div>
     </body>
 </html>
