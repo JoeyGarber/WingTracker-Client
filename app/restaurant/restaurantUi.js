@@ -1,4 +1,5 @@
 const onCreateRestaurantSuccess = function () {
+  $('form').trigger('reset')
   $('#message').show()
   $('#message').html('<p>Restaurant Created</p>')
   $('#message').hide(4000)
@@ -62,6 +63,7 @@ const onIndexRestaurantFailure = function () {
 }
 
 const onUpdateRestaurantSuccess = function () {
+  $('form').trigger('reset')
   $('#message').show()
   $('#message').html('<p>Restaurant Update Succeeded</p>')
   $('#message').hide(4000)
@@ -74,6 +76,7 @@ const onUpdateRestaurantFailure = function () {
 }
 
 const onDeleteRestaurantSuccess = function () {
+  $('form').trigger('reset')
   $('#message').show()
   $('#message').html('<p>Restaurant Deletion Succeeded</p>')
   $('#message').hide(4000)

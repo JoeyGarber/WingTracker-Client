@@ -30,7 +30,9 @@ const onSignOut = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  authApi.changePassword(getFormFields(event.target))
+  authApi
+    .changePassword(getFormFields(event.target))
+    .then(() => $('#change-password-div').html(''))
     .then(authUi.onChangePasswordSuccess)
     .catch(authUi.onChangePasswordFailure)
 }

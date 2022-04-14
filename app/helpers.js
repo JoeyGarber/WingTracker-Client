@@ -53,7 +53,8 @@ const showChangePasswordFormButton = function () {
         <input type="password" name="passwords[old]" placeholder="Old Password">
         <input type="password" name="passwords[new]" placeholder="New Password">
         <button type="submit">Change Password</button>
-      </form>`)
+      </form>
+      <hr>`)
   $('#change-password-div').show()
 }
 

@@ -29,6 +29,7 @@ const onSignInFailure = function () {
 }
 
 const onSignOutSuccess = function () {
+  $('form').trigger('reset')
   $('#message').show()
   $('#message').html('<p>Sign Out Success</p>')
   $('#message').hide(4000)
@@ -48,6 +49,7 @@ const onSignOutFailure = function () {
 }
 
 const onChangePasswordSuccess = function () {
+  $('form').trigger('reset')
   $('#message').show()
   $('#message').html('<p>Password Changed</p>')
   $('#message').hide(4000)

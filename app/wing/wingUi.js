@@ -1,4 +1,5 @@
 const onCreateWingSuccess = function () {
+  $('form').trigger('reset')
   console.log('Created wing successfully')
 }
 
@@ -7,6 +8,7 @@ const onCreateWingFailure = function () {
 }
 
 const onUpdateWingSuccess = function () {
+  $('form').trigger('reset')
   console.log('Created wing successfully')
 }
 
