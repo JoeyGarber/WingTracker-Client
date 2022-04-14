@@ -17,6 +17,7 @@ const onSignInSuccess = function (data) {
   $('.topnav').css('display', 'block')
   $('#resource-forms').show()
   $('#wings-table').show()
+  $('#searchbar').show()
   store.user = data.user
 }
 

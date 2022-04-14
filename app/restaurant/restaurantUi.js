@@ -14,7 +14,7 @@ const onIndexRestaurantSuccess = function (response) {
         <th>Restaurant</th>
         <th>Website</th>
         <th>Wings</th>
-        <th>Edit Restaurant</th>
+        <th>Add Wing</th>
       </tr>`
   for (let i = 0; i < response.restaurants.length; i++) {
     const restName = response.restaurants[i].name

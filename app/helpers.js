@@ -10,7 +10,7 @@ const showRestaurantForm = function (event) {
     <input name="restaurant[name]" type="text" placeholder="New Name">
     <input name="restaurant[website]" type="text" placeholder="New Website">
     <button id="update-restaurant-button" type="submit">Submit</button>
-</form><button id="delete-restaurant-button" data-restid="${restId}">Delete Restaurant</button></td>
+</form><button id="delete-restaurant-button" data-restid="${restId}">Delete Restaurant</button><button class="cancel-button">Cancel</button></td>
 `
   $(`#restaurant-content-${tableRowNum}`).html(formHtml)
 }
@@ -26,7 +26,7 @@ const showCreateWingForm = function (event) {
     <input name="wing[quality]" type="number" id="quality" min="1" max="100">
     <label for="quality">Quality (1-10)</label>
     <button id="update-restaurant-button" type="submit">Create Wing</button>
-</form></td>
+</form><button class="cancel-button">Cancel</button></td>
 `
   $(`#restaurant-content-${tableRowNum}`).html(formHtml)
 }
@@ -43,13 +43,33 @@ const showWingForm = function (event) {
     <input name="wing[quality]" type="number" id="quality" min="1" max="100">
     <label for="quality">Quality (1-10)</label>
     <button id="update-restaurant-button" type="submit">Update Wing</button>
-</form><button id="delete-wing-button" data-restid="${restId}" data-wingid="${wingId}">Delete Wing</button></td>
+</form><button id="delete-wing-button" data-restid="${restId}" data-wingid="${wingId}">Delete Wing</button><button class="cancel-button">Cancel</button></td>
 `
   $(`#restaurant-content-${tableRowNum}`).html(formHtml)
+}
+
+const searchbar = function () {
+  const input = document.getElementById('searchbar')
+  const filter = input.value.toUpperCase()
+  const table = document.getElementById('wings-table')
+  const tableRows = table.getElementsByTagName('tr')
+
+  for (let i = 0; i < tableRows.length; i++) {
+    const tableData = tableRows[i].getElementsByTagName('td')[0]
+    if (tableData) {
+      const textValue = tableData.textContent || tableData.innerText
+      if (textValue.toUpperCase().indexOf(filter) > -1) {
+        tableRows[i].style.display = ''
+      } else {
+        tableRows[i].style.display = 'none'
+      }
+    }
+  }
 }
 
 module.exports = {
   showRestaurantForm,
   showCreateWingForm,
-  showWingForm
+  showWingForm,
+  searchbar
 }

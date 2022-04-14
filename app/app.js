@@ -23,6 +23,7 @@ $(() => {
   $('#wings-table').on('click', '.show-restaurant-form', helpers.showRestaurantForm)
   $('#wings-table').on('submit', '#restaurant-form', restaurantEvents.onUpdateRestaurant)
   $('#wings-table').on('click', '#delete-restaurant-button', restaurantEvents.onDeleteRestaurant)
+  $('#wings-table').on('click', '.cancel-button', restaurantEvents.onIndexRestaurants)
 
   // Wing listeners
   $('#wings-table').on('click', '.show-create-wing-form', helpers.showCreateWingForm)
@@ -30,4 +31,7 @@ $(() => {
   $('#wings-table').on('click', '.show-wing-form', helpers.showWingForm)
   $('#wings-table').on('submit', '#wing-form', wingEvents.onUpdateWing)
   $('#wings-table').on('click', '#delete-wing-button', wingEvents.onDeleteWing)
+
+  // Searchbar
+  $('#searchbar').on('keyup', helpers.searchbar)
 })
