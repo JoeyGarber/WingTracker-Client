@@ -33,7 +33,24 @@ const onUpdateWing = function (event) {
     .catch(wingUi.onUpdateWingFailure)
 }
 
+const onDeleteWing = function (event) {
+  event.preventDefault()
+  const prevDefaultAble = event
+  const restId = $(event.target).data('restid')
+  const wingId = $(event.target).data('wingid')
+  const data = {
+    wing: {
+      wingId: wingId
+    }
+  }
+  wingApi.deleteWing(restId, data)
+    .then(() => restaurantEvents.onIndexRestaurants(prevDefaultAble))
+    .then(wingUi.onDeleteWingSuccess)
+    .catch(wingUi.onDeleteWingFailure)
+}
+
 module.exports = {
   onCreateWing,
-  onUpdateWing
+  onUpdateWing,
+  onDeleteWing
 }

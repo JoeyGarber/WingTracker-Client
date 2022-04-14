@@ -25,7 +25,20 @@ const updateWing = function (restid, data) {
   })
 }
 
+const deleteWing = function (restid, data) {
+  return $.ajax({
+    url: config.apiUrl + '/wings/' + restid,
+    method: 'DELETE',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   createWing,
-  updateWing
+  updateWing,
+  deleteWing
 }

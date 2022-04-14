@@ -42,8 +42,8 @@ const showWingForm = function (event) {
     <label for="spiciness">Spiciness (1-10)</label>
     <input name="wing[quality]" type="number" id="quality" min="1" max="100">
     <label for="quality">Quality (1-10)</label>
-    <button id="update-restaurant-button" type="submit">Create Wing</button>
-</form></td>
+    <button id="update-restaurant-button" type="submit">Update Wing</button>
+</form><button id="delete-wing-button" data-restid="${restId}" data-wingid="${wingId}">Delete Wing</button></td>
 `
   $(`#restaurant-content-${tableRowNum}`).html(formHtml)
 }
