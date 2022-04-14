@@ -13,6 +13,19 @@ const createWing = function (data) {
   })
 }
 
+const updateWing = function (restid, data) {
+  return $.ajax({
+    url: config.apiUrl + '/wings/' + restid,
+    method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
-  createWing
+  createWing,
+  updateWing
 }

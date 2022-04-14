@@ -33,9 +33,10 @@ const showCreateWingForm = function (event) {
 
 const showWingForm = function (event) {
   const restId = $(event.target).data('restid')
+  const wingId = $(event.target).data('wingid')
   const tableRowNum = $(event.target).data('table-row')
   const formHtml = `
-  <td><form id="wing-form" data-restid="${restId}">
+  <td><form id="wing-form" data-restid="${restId}" data-wingid="${wingId}">
     <input name="wing[name]" type="text" placeholder="New Wing Name">
     <input name="wing[spiciness]" type="number" id="spiciness" min="1" max="100">
     <label for="spiciness">Spiciness (1-10)</label>

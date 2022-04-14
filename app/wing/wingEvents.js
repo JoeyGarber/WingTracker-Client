@@ -22,14 +22,15 @@ const onUpdateWing = function (event) {
   event.preventDefault()
   const prevDefaultAble = event
   const restId = $(event.target).data('restid')
+  const wingId = $(event.target).data('wingid')
   const data = getFormFields(event.target)
-  data.wing.restaurantId = restId
+  data.wing.wingId = wingId
   console.log(data)
   wingApi
-    .createWing(data)
+    .updateWing(restId, data)
     .then(() => restaurantEvents.onIndexRestaurants(prevDefaultAble))
-    .then(wingUi.onCreateWingSuccess)
-    .catch(wingUi.onCreateWingFailure)
+    .then(wingUi.onUpdateWingSuccess)
+    .catch(wingUi.onUpdateWingFailure)
 }
 
 module.exports = {
