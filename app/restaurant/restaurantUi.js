@@ -36,9 +36,9 @@ const onIndexRestaurantSuccess = function (response) {
       if (wings.length !== 0) {
         data += `
           <tr>
-            <td>${wings[j].name}</td>
-            <td>${wings[j].spiciness}</td>
-            <td>${wings[j].quality}</td>
+            <td class="show-wing-form" data-table-row="${i}" data-restid="${restId}" data-wingid="${wings[j]._id}">${wings[j].name}</td>
+            <td class="show-wing-form" data-table-row="${i}" data-restid="${restId}" data-wingid="${wings[j]._id}">${wings[j].spiciness}</td>
+            <td class="show-wing-form" data-table-row="${i}" data-restid="${restId}" data-wingid="${wings[j]._id}">${wings[j].quality}</td>
           </tr>
             `
       }

@@ -27,4 +27,6 @@ $(() => {
   // Wing listeners
   $('#wings-table').on('click', '.show-create-wing-form', helpers.showCreateWingForm)
   $('#wings-table').on('submit', '#create-wing-form', wingEvents.onCreateWing)
+  $('#wings-table').on('click', '.show-wing-form', helpers.showWingForm)
+  $('#wings-table').on('submit', '#wing-form', wingEvents.onUpdateWing)
 })
