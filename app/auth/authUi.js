@@ -1,16 +1,16 @@
 const store = require('../store')
 
 const onSignUpSuccess = function () {
-  $('#message').html('<p>Sign Up Success</p>')
   $('form').trigger('reset')
 }
 
 const onSignUpFailure = function () {
+  $('#message').show()
   $('#message').html('<p>Sign Up Failed</p>')
+  $('#message').hide(4000)
 }
 
 const onSignInSuccess = function (data) {
-  $('#message').html('<p>Sign In Success</p>')
   console.log(data)
   $('form').trigger('reset')
   $('#auth-forms').hide()
@@ -23,11 +23,15 @@ const onSignInSuccess = function (data) {
 }
 
 const onSignInFailure = function () {
+  $('#message').show()
   $('#message').html('<p>Sign In Failed</p>')
+  $('#message').hide(4000)
 }
 
 const onSignOutSuccess = function () {
+  $('#message').show()
   $('#message').html('<p>Sign Out Success</p>')
+  $('#message').hide(4000)
   $('.topnav').css('display', 'none')
   store.user = null
   $('#auth-forms').show()
@@ -38,23 +42,21 @@ const onSignOutSuccess = function () {
 }
 
 const onSignOutFailure = function () {
+  $('#message').show()
   $('#message').html('<p>Sign Out Failed</p>')
-}
-
-const onShowChangePasswordFormButton = function () {
-  $('#change-password-div').html(`<form id="change-password-form">
-        <input type="password" name="passwords[old]" placeholder="Old Password">
-        <input type="password" name="passwords[new]" placeholder="New Password">
-        <button type="submit">Change Password</button>
-      </form>`)
+  $('#message').hide(4000)
 }
 
 const onChangePasswordSuccess = function () {
+  $('#message').show()
   $('#message').html('<p>Password Changed</p>')
+  $('#message').hide(4000)
 }
 
 const onChangePasswordFailure = function () {
+  $('#message').show()
   $('#message').html('<p>Password Change Failed</p>')
+  $('#message').hide(4000)
 }
 
 module.exports = {
@@ -65,6 +67,5 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onChangePasswordSuccess,
-  onChangePasswordFailure,
-  onShowChangePasswordFormButton
+  onChangePasswordFailure
 }

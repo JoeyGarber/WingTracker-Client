@@ -1,5 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
 
+body {
+    background-color: rgba(235, 64, 52, 1);
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Oswald',
+    sans-serif;
+}
+
 .topnav {
     display: none;
 }
@@ -22,6 +29,8 @@
 
 #searchbar {
     display: none;
+    font-family: 'Oswald',
+    sans-serif;
 }
 
 td {
@@ -35,4 +44,15 @@ td {
 
 th, td {
     padding: 5px;
+    font-family: 'helvetica', 'serif';
+}
+
+form {
+    font-family: 'helvetica',
+    'serif';
+}
+
+form > button {
+    font-family: 'Oswald',
+    sans-serif;
 }

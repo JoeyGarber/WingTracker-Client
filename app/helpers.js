@@ -48,6 +48,15 @@ const showWingForm = function (event) {
   $(`#restaurant-content-${tableRowNum}`).html(formHtml)
 }
 
+const showChangePasswordFormButton = function () {
+  $('#change-password-div').html(`<form id="change-password-form">
+        <input type="password" name="passwords[old]" placeholder="Old Password">
+        <input type="password" name="passwords[new]" placeholder="New Password">
+        <button type="submit">Change Password</button>
+      </form>`)
+  $('#change-password-div').show()
+}
+
 const searchbar = function () {
   const input = document.getElementById('searchbar')
   const filter = input.value.toUpperCase()
@@ -71,5 +80,6 @@ module.exports = {
   showRestaurantForm,
   showCreateWingForm,
   showWingForm,
+  showChangePasswordFormButton,
   searchbar
 }

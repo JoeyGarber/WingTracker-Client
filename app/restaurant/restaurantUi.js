@@ -1,13 +1,16 @@
 const onCreateRestaurantSuccess = function () {
+  $('#message').show()
   $('#message').html('<p>Restaurant Created</p>')
+  $('#message').hide(4000)
 }
 
 const onCreateRestaurantFailure = function () {
+  $('#message').show()
   $('#message').html('<p>Restaurant Creation failed</p>')
+  $('#message').hide(4000)
 }
 
 const onIndexRestaurantSuccess = function (response) {
-  $('#message').html('<p>Restaurant Index Succeeded</p>')
   console.log(response)
   let data =
       `<tr>
@@ -53,23 +56,32 @@ const onIndexRestaurantSuccess = function (response) {
 }
 
 const onIndexRestaurantFailure = function () {
+  $('#message').show()
   $('#message').html('<p>Restaurant Index Failed</p>')
+  $('#message').hide(4000)
 }
 
 const onUpdateRestaurantSuccess = function () {
+  $('#message').show()
   $('#message').html('<p>Restaurant Update Succeeded</p>')
+  $('#message').hide(4000)
 }
 
 const onUpdateRestaurantFailure = function () {
+  $('#message').show()
   $('#message').html('<p>Restaurant Update Failed</p>')
+  $('#message').hide(4000)
 }
 
 const onDeleteRestaurantSuccess = function () {
+  $('#message').show()
   $('#message').html('<p>Restaurant Deletion Succeeded</p>')
+  $('#message').hide(4000)
 }
 
 const onDeleteRestaurantFailure = function () {
   $('#message').html('<p>Restaurant Deletion Failed</p>')
+  $('#message').hide(4000)
 }
 
 module.exports = {

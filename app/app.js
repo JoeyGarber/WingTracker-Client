@@ -5,7 +5,6 @@
 // require('./example')
 const helpers = require('./helpers.js')
 const authEvents = require('./auth/authEvents.js')
-const authUi = require('./auth/authUi')
 const restaurantEvents = require('./restaurant/restaurantEvents.js')
 const wingEvents = require('./wing/wingEvents.js')
 
@@ -14,7 +13,7 @@ $(() => {
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#sign-out-button').on('click', authEvents.onSignOut)
-  $('#show-change-password-form-button').on('click', authUi.onShowChangePasswordFormButton)
+  $('#show-change-password-form-button').on('click', helpers.showChangePasswordFormButton)
   $('#change-password-div').on('submit', '#change-password-form', authEvents.onChangePassword)
 
   // Restaurant listeners
