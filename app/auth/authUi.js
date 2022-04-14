@@ -18,6 +18,7 @@ const onSignInSuccess = function (data) {
   $('#resource-forms').show()
   $('#wings-table').show()
   $('#searchbar').show()
+  $('#memo').show()
   store.user = data.user
 }
 
@@ -33,6 +34,7 @@ const onSignOutSuccess = function () {
   $('#change-password-form').hide()
   $('#resource-forms').hide()
   $('#wings-table').hide()
+  $('#memo').hide()
 }
 
 const onSignOutFailure = function () {

@@ -52,12 +52,12 @@ const searchbar = function () {
   const input = document.getElementById('searchbar')
   const filter = input.value.toUpperCase()
   const table = document.getElementById('wings-table')
-  const tableRows = table.getElementsByTagName('tr')
+  const tableRows = table.getElementsByClassName('restaurant-row')
 
   for (let i = 0; i < tableRows.length; i++) {
     const tableData = tableRows[i].getElementsByTagName('td')[0]
     if (tableData) {
-      const textValue = tableData.textContent || tableData.innerText
+      const textValue = tableData.textContent
       if (textValue.toUpperCase().indexOf(filter) > -1) {
         tableRows[i].style.display = ''
       } else {

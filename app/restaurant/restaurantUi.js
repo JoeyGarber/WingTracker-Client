@@ -25,7 +25,7 @@ const onIndexRestaurantSuccess = function (response) {
     // I'm running into an issue here because not all the restaurants are going to have wings. Some are going to have undefined fields for their wings. And jQuery can't read those.
 
     data += `
-      <tr id="restaurant-content-${i}">
+      <tr class="restaurant-row" id="restaurant-content-${i}">
         <td class="show-restaurant-form" data-table-row="${i}" data-restid="${restId}">${restName}</td>
         <td class="show-restaurant-form" data-table-row="${i}" data-restid="${restId}">${restWebsite}</td>
         <td><table><tr>
