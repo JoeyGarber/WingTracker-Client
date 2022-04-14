@@ -26,8 +26,8 @@ const onIndexRestaurantSuccess = function (response) {
 
     data += `
       <tr id="restaurant-content-${i}">
-        <td class="show-new-wing-form" data-table-row="${i}" data-restid="${restId}">${restName}</td>
-        <td>${restWebsite}</td>
+        <td class="show-update-restaurant-form" data-table-row="${i}" data-restid="${restId}">${restName}</td>
+        <td class="show-update-restaurant-form" data-table-row="${i}" data-restid="${restId}">${restWebsite}</td>
         <td><table><tr>
         <th>Name</th><th>Spiciness</th><th>Quality</th>
         </tr>`
@@ -46,7 +46,7 @@ const onIndexRestaurantSuccess = function (response) {
 
     data += `
         </table></td>
-        <td><button class="show-update-restaurant-button" data-restid="${restId}" data-table-row="${i}">Update Restaurant</button></td>
+        <td><button class="show-wing-form" data-restid="${restId}" data-table-row="${i}">Add Wing</button></td>
       </tr>`
   }
   $('#wings-table').html(data)

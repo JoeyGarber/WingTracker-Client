@@ -15,16 +15,16 @@ const showUpdateRestaurantForm = function (event) {
   $(`#restaurant-content-${tableRowNum}`).html(formHtml)
 }
 
-const showCreateWingForm = function (event) {
+const showWingForm = function (event) {
   const restId = $(event.target).data('restid')
   const tableRowNum = $(event.target).data('table-row')
   const formHtml = `
-  <td><form id="new-wing-form" data-restid="${restId}">
+  <td><form id="wing-form" data-restid="${restId}">
     <input name="wing[name]" type="text" placeholder="New Wing Name">
     <input name="wing[spiciness]" type="number" id="spiciness" min="1" max="100">
-    <label for="spiciness">Spiciness (1-100)</label>
+    <label for="spiciness">Spiciness (1-10)</label>
     <input name="wing[quality]" type="number" id="quality" min="1" max="100">
-    <label for="quality">Quality (1-100)</label>
+    <label for="quality">Quality (1-10)</label>
     <button id="update-restaurant-button" type="submit">Create Wing</button>
 </form></td>
 `
@@ -33,5 +33,5 @@ const showCreateWingForm = function (event) {
 
 module.exports = {
   showUpdateRestaurantForm,
-  showCreateWingForm
+  showWingForm
 }

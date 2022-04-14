@@ -11,3 +11,16 @@
 #wings-table {
     display: none;
 }
+
+td {
+    vertical-align: top;
+    text-align: left;
+}
+
+#wings-table, #wings-table > th {
+    border: 1px solid;
+}
+
+th, td {
+    padding: 5px;
+}

@@ -30,7 +30,8 @@ const onSignOutSuccess = function () {
   store.user = null
   $('#auth-forms').show()
   $('#change-password-form').hide()
-  $('#resource-forms').show().hide()
+  $('#resource-forms').hide()
+  $('#wings-table').hide()
 }
 
 const onSignOutFailure = function () {

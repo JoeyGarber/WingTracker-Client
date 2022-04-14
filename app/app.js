@@ -20,10 +20,10 @@ $(() => {
   // Restaurant listeners
   $('#create-restaurant-form').on('submit', restaurantEvents.onCreateRestaurant)
   $('#index-restaurants-button').on('click', restaurantEvents.onIndexRestaurants)
-  $('#wings-table').on('click', '.show-update-restaurant-button', helpers.showUpdateRestaurantForm)
+  $('#wings-table').on('click', '.show-update-restaurant-form', helpers.showUpdateRestaurantForm)
   $('#wings-table').on('submit', '#update-restaurant-form', restaurantEvents.onUpdateRestaurant)
 
   // Wing listeners
-  $('#wings-table').on('click', '.show-new-wing-form', helpers.showCreateWingForm)
-  $('#wings-table').on('submit', '#new-wing-form', wingEvents.onCreateWing)
+  $('#wings-table').on('click', '.show-wing-form', helpers.showWingForm)
+  $('#wings-table').on('submit', '#wing-form', wingEvents.onCreateWing)
 })
