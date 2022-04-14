@@ -26,8 +26,8 @@ const onIndexRestaurantSuccess = function (response) {
 
     data += `
       <tr id="restaurant-content-${i}">
-        <td class="show-update-restaurant-form" data-table-row="${i}" data-restid="${restId}">${restName}</td>
-        <td class="show-update-restaurant-form" data-table-row="${i}" data-restid="${restId}">${restWebsite}</td>
+        <td class="show-restaurant-form" data-table-row="${i}" data-restid="${restId}">${restName}</td>
+        <td class="show-restaurant-form" data-table-row="${i}" data-restid="${restId}">${restWebsite}</td>
         <td><table><tr>
         <th>Name</th><th>Spiciness</th><th>Quality</th>
         </tr>`
@@ -46,7 +46,7 @@ const onIndexRestaurantSuccess = function (response) {
 
     data += `
         </table></td>
-        <td><button class="show-wing-form" data-restid="${restId}" data-table-row="${i}">Add Wing</button></td>
+        <td><button class="show-create-wing-form" data-restid="${restId}" data-table-row="${i}">Add Wing</button></td>
       </tr>`
   }
   $('#wings-table').html(data)
@@ -56,12 +56,20 @@ const onIndexRestaurantFailure = function () {
   $('#message').html('<p>Restaurant Index Failed</p>')
 }
 
-const onRestaurantUpdateSuccess = function () {
+const onUpdateRestaurantSuccess = function () {
   $('#message').html('<p>Restaurant Update Succeeded</p>')
 }
 
-const onRestaurantUpdateFailure = function () {
+const onUpdateRestaurantFailure = function () {
   $('#message').html('<p>Restaurant Update Failed</p>')
+}
+
+const onDeleteRestaurantSuccess = function () {
+  $('#message').html('<p>Restaurant Deletion Succeeded</p>')
+}
+
+const onDeleteRestaurantFailure = function () {
+  $('#message').html('<p>Restaurant Deletion Failed</p>')
 }
 
 module.exports = {
@@ -69,6 +77,8 @@ module.exports = {
   onCreateRestaurantFailure,
   onIndexRestaurantSuccess,
   onIndexRestaurantFailure,
-  onRestaurantUpdateSuccess,
-  onRestaurantUpdateFailure
+  onUpdateRestaurantSuccess,
+  onUpdateRestaurantFailure,
+  onDeleteRestaurantSuccess,
+  onDeleteRestaurantFailure
 }

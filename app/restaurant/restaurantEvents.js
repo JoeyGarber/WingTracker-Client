@@ -26,12 +26,23 @@ const onUpdateRestaurant = function (event) {
   const data = getFormFields(event.target)
   restaurantApi.updateRestaurant(data, restId)
     .then(() => onIndexRestaurants(prevDefaultAble))
-    .then(restaurantUi.onRestaurantUpdateSuccess)
-    .catch(restaurantUi.onRestaurantUpdateFailure)
+    .then(restaurantUi.onUpdateRestaurantSuccess)
+    .catch(restaurantUi.onUpdateRestaurantFailure)
+}
+
+const onDeleteRestaurant = function (event) {
+  event.preventDefault()
+  const prevDefaultAble = event
+  const restId = $(event.target).data('restid')
+  restaurantApi.deleteRestaurant(restId)
+    .then(() => onIndexRestaurants(prevDefaultAble))
+    .then(restaurantUi.onDeleteRestaurantSuccess)
+    .catch(restaurantUi.onDeleteRestaurantFailure)
 }
 
 module.exports = {
   onCreateRestaurant,
   onIndexRestaurants,
-  onUpdateRestaurant
+  onUpdateRestaurant,
+  onDeleteRestaurant
 }
