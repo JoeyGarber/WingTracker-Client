@@ -48,14 +48,19 @@ const showWingForm = function (event) {
   $(`#restaurant-content-${tableRowNum}`).html(formHtml)
 }
 
-const showChangePasswordFormButton = function () {
+const showChangePasswordForm = function () {
   $('#change-password-div').html(`<form id="change-password-form">
         <input type="password" name="passwords[old]" placeholder="Old Password">
         <input type="password" name="passwords[new]" placeholder="New Password">
         <button type="submit">Change Password</button>
       </form>
+      <button id="cancel-change-password-button">Cancel</button>
       <hr>`)
   $('#change-password-div').show()
+}
+
+const hideChangePasswordForm = function () {
+  $('#change-password-div').html('')
 }
 
 const searchbar = function () {
@@ -81,6 +86,7 @@ module.exports = {
   showRestaurantForm,
   showCreateWingForm,
   showWingForm,
-  showChangePasswordFormButton,
+  showChangePasswordForm,
+  hideChangePasswordForm,
   searchbar
 }

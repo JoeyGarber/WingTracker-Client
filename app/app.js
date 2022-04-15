@@ -13,8 +13,9 @@ $(() => {
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#sign-out-button').on('click', authEvents.onSignOut)
-  $('#show-change-password-form-button').on('click', helpers.showChangePasswordFormButton)
+  $('#show-change-password-form-button').on('click', helpers.showChangePasswordForm)
   $('#change-password-div').on('submit', '#change-password-form', authEvents.onChangePassword)
+  $('#change-password-div').on('click', '#cancel-change-password-button', helpers.hideChangePasswordForm)
 
   // Restaurant listeners
   $('#create-restaurant-form').on('submit', restaurantEvents.onCreateRestaurant)
