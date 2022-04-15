@@ -27,8 +27,8 @@ const onIndexRestaurantSuccess = function (response) {
 
     data += `
       <tr class="restaurant-row" id="restaurant-content-${i}">
-        <td class="show-restaurant-form" data-table-row="${i}" data-restid="${restId}">${restName}</td>
-        <td class="show-restaurant-form" data-table-row="${i}" data-restid="${restId}">${restWebsite}</td>
+        <td class="show-restaurant-form" data-rest-name="${restName}" data-rest-website="${restWebsite}" data-table-row="${i}" data-restid="${restId}">${restName}</td>
+        <td class="show-restaurant-form" data-rest-name="${restName}" data-rest-website="${restWebsite}" data-table-row="${i}" data-restid="${restId}">${restWebsite}</td>
         <td><table><tr>
         <th>Name</th><th>Spiciness</th><th>Quality</th>
         </tr>`
@@ -37,9 +37,9 @@ const onIndexRestaurantSuccess = function (response) {
       if (wings.length !== 0) {
         data += `
           <tr>
-            <td class="show-wing-form" data-table-row="${i}" data-restid="${restId}" data-wingid="${wings[j]._id}">${wings[j].name}</td>
-            <td class="show-wing-form" data-table-row="${i}" data-restid="${restId}" data-wingid="${wings[j]._id}">${wings[j].spiciness}</td>
-            <td class="show-wing-form" data-table-row="${i}" data-restid="${restId}" data-wingid="${wings[j]._id}">${wings[j].quality}</td>
+            <td class="show-wing-form" data-wing-name="${wings[j].name}" data-wing-spiciness="${wings[j].spiciness}" data-wing-quality="${wings[j].quality}" data-table-row="${i}" data-restid="${restId}" data-wingid="${wings[j]._id}">${wings[j].name}</td>
+            <td class="show-wing-form" data-wing-name="${wings[j].name}" data-wing-spiciness="${wings[j].spiciness}" data-wing-quality="${wings[j].quality}" data-table-row="${i}" data-restid="${restId}" data-wingid="${wings[j]._id}">${wings[j].spiciness}</td>
+            <td class="show-wing-form" data-wing-name="${wings[j].name}" data-wing-spiciness="${wings[j].spiciness}" data-wing-quality="${wings[j].quality}" data-table-row="${i}" data-restid="${restId}" data-wingid="${wings[j]._id}">${wings[j].quality}</td>
           </tr>
             `
       }

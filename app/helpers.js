@@ -4,9 +4,11 @@ const showRestaurantForm = function (event) {
   const restId = $(event.target).data('restid')
   // target the line it's going to update
   const tableRowNum = $(event.target).data('table-row')
+  const restName = $(event.target).data('rest-name')
+  const restWebsite = $(event.target).data('rest-website')
   // Going to make it into HTML forms
   const formHtml = `
-  <td><form id="restaurant-form" data-restid="${restId}">
+  <td><p>${restName} | ${restWebsite}</p><form id="restaurant-form" data-restid="${restId}">
     <input name="restaurant[name]" type="text" placeholder="New Name">
     <input name="restaurant[website]" type="text" placeholder="New Website">
     <button id="update-restaurant-button" type="submit">Submit</button>
@@ -34,9 +36,12 @@ const showCreateWingForm = function (event) {
 const showWingForm = function (event) {
   const restId = $(event.target).data('restid')
   const wingId = $(event.target).data('wingid')
+  const wingName = $(event.target).data('wing-name')
+  const wingSpiciness = $(event.target).data('wing-spiciness')
+  const wingQuality = $(event.target).data('wing-quality')
   const tableRowNum = $(event.target).data('table-row')
   const formHtml = `
-  <td><form id="wing-form" data-restid="${restId}" data-wingid="${wingId}">
+  <td><p>${wingName} | Spiciness: ${wingSpiciness} | Quality: ${wingQuality}</p><form id="wing-form" data-restid="${restId}" data-wingid="${wingId}">
     <input name="wing[name]" type="text" placeholder="New Wing Name">
     <input name="wing[spiciness]" type="number" id="spiciness" min="1" max="100">
     <label for="spiciness">Spiciness (1-10)</label>
