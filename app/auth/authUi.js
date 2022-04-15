@@ -7,11 +7,10 @@ const onSignUpSuccess = function () {
 const onSignUpFailure = function () {
   $('#message').show()
   $('#message').html('<p>Sign Up Failed</p>')
-  $('#message').hide(4000)
+  $('#message').hide(8000)
 }
 
 const onSignInSuccess = function (data) {
-  console.log(data)
   $('form').trigger('reset')
   $('#auth-forms').hide()
   $('.topnav').css('display', 'block')
@@ -25,14 +24,11 @@ const onSignInSuccess = function (data) {
 const onSignInFailure = function () {
   $('#message').show()
   $('#message').html('<p>Sign In Failed</p>')
-  $('#message').hide(4000)
+  $('#message').hide(8000)
 }
 
 const onSignOutSuccess = function () {
   $('form').trigger('reset')
-  $('#message').show()
-  $('#message').html('<p>Sign Out Success</p>')
-  $('#message').hide(4000)
   $('.topnav').css('display', 'none')
   store.user = null
   $('#auth-forms').show()
@@ -45,20 +41,20 @@ const onSignOutSuccess = function () {
 const onSignOutFailure = function () {
   $('#message').show()
   $('#message').html('<p>Sign Out Failed</p>')
-  $('#message').hide(4000)
+  $('#message').hide(8000)
 }
 
 const onChangePasswordSuccess = function () {
   $('form').trigger('reset')
   $('#message').show()
   $('#message').html('<p>Password Changed</p>')
-  $('#message').hide(4000)
+  $('#message').hide(8000)
 }
 
 const onChangePasswordFailure = function () {
   $('#message').show()
   $('#message').html('<p>Password Change Failed</p>')
-  $('#message').hide(4000)
+  $('#message').hide(8000)
 }
 
 module.exports = {

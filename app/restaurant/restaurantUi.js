@@ -1,14 +1,11 @@
 const onCreateRestaurantSuccess = function () {
   $('form').trigger('reset')
-  $('#message').show()
-  $('#message').html('<p>Restaurant Created</p>')
-  $('#message').hide(4000)
 }
 
 const onCreateRestaurantFailure = function () {
   $('#message').show()
   $('#message').html('<p>Restaurant Creation failed</p>')
-  $('#message').hide(4000)
+  $('#message').hide(8000)
 }
 
 const onIndexRestaurantSuccess = function (response) {
@@ -59,32 +56,26 @@ const onIndexRestaurantSuccess = function (response) {
 const onIndexRestaurantFailure = function () {
   $('#message').show()
   $('#message').html('<p>Restaurant Index Failed</p>')
-  $('#message').hide(4000)
+  $('#message').hide(8000)
 }
 
 const onUpdateRestaurantSuccess = function () {
   $('form').trigger('reset')
-  $('#message').show()
-  $('#message').html('<p>Restaurant Update Succeeded</p>')
-  $('#message').hide(4000)
 }
 
 const onUpdateRestaurantFailure = function () {
   $('#message').show()
   $('#message').html('<p>Restaurant Update Failed</p>')
-  $('#message').hide(4000)
+  $('#message').hide(8000)
 }
 
 const onDeleteRestaurantSuccess = function () {
   $('form').trigger('reset')
-  $('#message').show()
-  $('#message').html('<p>Restaurant Deletion Succeeded</p>')
-  $('#message').hide(4000)
 }
 
 const onDeleteRestaurantFailure = function () {
   $('#message').html('<p>Restaurant Deletion Failed</p>')
-  $('#message').hide(4000)
+  $('#message').hide(8000)
 }
 
 module.exports = {
