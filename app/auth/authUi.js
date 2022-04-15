@@ -17,7 +17,7 @@ const onSignInSuccess = function (data) {
   $('#resource-forms').show()
   $('#wings-table').show()
   $('#searchbar').show()
-  $('#memo').show()
+  $('#memo').html('<p id="memo">Create a restaurant, then add your wings to it! Click on a created restaurant or wing to edit or delete it!</p>')
   store.user = data.user
 }
 
@@ -35,7 +35,7 @@ const onSignOutSuccess = function () {
   $('#change-password-form').hide()
   $('#resource-forms').hide()
   $('#wings-table').hide()
-  $('#memo').hide()
+  $('#memo').html('<p id=\'memo\'>Keep track of your personal wing spiciness opinions!</p>')
 }
 
 const onSignOutFailure = function () {

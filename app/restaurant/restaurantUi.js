@@ -51,6 +51,7 @@ const onIndexRestaurantSuccess = function (response) {
       </tr>`
   }
   $('#wings-table').html(data)
+  $('.show-create-wing-form').show()
 }
 
 const onIndexRestaurantFailure = function () {

@@ -15,6 +15,7 @@ const showRestaurantForm = function (event) {
 </form><button id="delete-restaurant-button" data-restid="${restId}">Delete Restaurant</button><button class="cancel-button">Cancel</button></td>
 `
   $(`#restaurant-content-${tableRowNum}`).html(formHtml)
+  $('.show-create-wing-form').hide()
 }
 
 const showCreateWingForm = function (event) {
@@ -31,6 +32,7 @@ const showCreateWingForm = function (event) {
 </form><button class="cancel-button">Cancel</button></td>
 `
   $(`#restaurant-content-${tableRowNum}`).html(formHtml)
+  $('.show-create-wing-form').hide()
 }
 
 const showWingForm = function (event) {
@@ -51,6 +53,7 @@ const showWingForm = function (event) {
 </form><button id="delete-wing-button" data-restid="${restId}" data-wingid="${wingId}">Delete Wing</button><button class="cancel-button">Cancel</button></td>
 `
   $(`#restaurant-content-${tableRowNum}`).html(formHtml)
+  $('.show-create-wing-form').hide()
 }
 
 const showChangePasswordForm = function () {
