@@ -7,6 +7,20 @@ body {
     sans-serif;
 }
 
+button {
+    border: none;
+    background-color: rgba(250, 245, 138, 1);
+    text-align: center;
+    text-decoration: none;
+}
+
+p, h4, h5 {
+    color: rgba(250, 245, 138, 1);
+    font-family: 'Oswald', sans-serif;
+}
+
+
+
 .topnav {
     display: none;
 }

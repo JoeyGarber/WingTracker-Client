@@ -7,7 +7,7 @@ const onSignUpSuccess = function () {
 const onSignUpFailure = function () {
   $('#message').show()
   $('#message').html('<p>Sign Up Failed</p>')
-  $('#message').hide(8000)
+  $('#message').fadeOut(4000)
 }
 
 const onSignInSuccess = function (data) {
@@ -24,7 +24,7 @@ const onSignInSuccess = function (data) {
 const onSignInFailure = function () {
   $('#message').show()
   $('#message').html('<p>Sign In Failed</p>')
-  $('#message').hide(8000)
+  $('#message').fadeOut(4000)
 }
 
 const onSignOutSuccess = function () {
@@ -33,6 +33,7 @@ const onSignOutSuccess = function () {
   store.user = null
   $('#auth-forms').show()
   $('#change-password-form').hide()
+  $('#searchbar').hide()
   $('#resource-forms').hide()
   $('#wings-table').hide()
   $('#memo').html('<p id=\'memo\'>Keep track of your personal wing spiciness opinions!</p>')
@@ -41,20 +42,20 @@ const onSignOutSuccess = function () {
 const onSignOutFailure = function () {
   $('#message').show()
   $('#message').html('<p>Sign Out Failed</p>')
-  $('#message').hide(8000)
+  $('#message').fadeOut(4000)
 }
 
 const onChangePasswordSuccess = function () {
   $('form').trigger('reset')
   $('#message').show()
   $('#message').html('<p>Password Changed</p>')
-  $('#message').hide(8000)
+  $('#message').fadeOut(4000)
 }
 
 const onChangePasswordFailure = function () {
   $('#message').show()
   $('#message').html('<p>Password Change Failed</p>')
-  $('#message').hide(8000)
+  $('#message').fadeOut(4000)
 }
 
 module.exports = {

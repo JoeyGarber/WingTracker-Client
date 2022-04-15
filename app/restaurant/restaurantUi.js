@@ -5,7 +5,7 @@ const onCreateRestaurantSuccess = function () {
 const onCreateRestaurantFailure = function () {
   $('#message').show()
   $('#message').html('<p>Restaurant Creation failed</p>')
-  $('#message').hide(8000)
+  $('#message').fadeOut(4000)
 }
 
 const onIndexRestaurantSuccess = function (response) {
@@ -15,7 +15,7 @@ const onIndexRestaurantSuccess = function (response) {
         <th>Restaurant</th>
         <th>Website</th>
         <th>Wings</th>
-        <th>Add Wing</th>
+        <th></th>
       </tr>`
   for (let i = 0; i < response.restaurants.length; i++) {
     const restName = response.restaurants[i].name
@@ -57,7 +57,7 @@ const onIndexRestaurantSuccess = function (response) {
 const onIndexRestaurantFailure = function () {
   $('#message').show()
   $('#message').html('<p>Restaurant Index Failed</p>')
-  $('#message').hide(8000)
+  $('#message').fadeOut(4000)
 }
 
 const onUpdateRestaurantSuccess = function () {
@@ -67,7 +67,7 @@ const onUpdateRestaurantSuccess = function () {
 const onUpdateRestaurantFailure = function () {
   $('#message').show()
   $('#message').html('<p>Restaurant Update Failed</p>')
-  $('#message').hide(8000)
+  $('#message').fadeOut(4000)
 }
 
 const onDeleteRestaurantSuccess = function () {
@@ -76,7 +76,7 @@ const onDeleteRestaurantSuccess = function () {
 
 const onDeleteRestaurantFailure = function () {
   $('#message').html('<p>Restaurant Deletion Failed</p>')
-  $('#message').hide(8000)
+  $('#message').fadeOut(4000)
 }
 
 module.exports = {
