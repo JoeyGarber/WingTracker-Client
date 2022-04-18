@@ -5,7 +5,6 @@ This application allows users to create an account, and use it to log hot wing r
 ## Important Links
 
 - [Deployed Client](https://joeygarber.github.io/WingTracker-Client/)
-Link to Deployed API coming soon.
 - [API Repo](https://github.com/JoeyGarber/WingTracker-API)
 - [Deployed API](https://protected-wave-68332.herokuapp.com)
 
