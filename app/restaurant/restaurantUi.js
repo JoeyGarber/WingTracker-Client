@@ -9,7 +9,6 @@ const onCreateRestaurantFailure = function () {
 }
 
 const onIndexRestaurantSuccess = function (response) {
-  console.log(response)
   let data =
       `<tr>
         <th>Restaurant</th>

@@ -1,19 +1,21 @@
 const onCreateWingSuccess = function () {
   $('form').trigger('reset')
-  console.log('Created wing successfully')
 }
 
 const onCreateWingFailure = function () {
-  console.log('Failed to create wing')
+  $('#message').show()
+  $('#message').html('<p>Failed to create wing</p>')
+  $('#message').fadeOut(4000)
 }
 
 const onUpdateWingSuccess = function () {
   $('form').trigger('reset')
-  console.log('Created wing successfully')
 }
 
 const onUpdateWingFailure = function () {
-  console.log('Failed to create wing')
+  $('#message').show()
+  $('#message').html('<p>Failed to create restaurant</p>')
+  $('#message').fadeOut(4000)
 }
 
 module.exports = {

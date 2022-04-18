@@ -11,7 +11,6 @@ const onCreateWing = function (event) {
   const restId = $(event.target).data('restid')
   const data = getFormFields(event.target)
   data.wing.restaurantId = restId
-  console.log(data)
   wingApi.createWing(data)
     .then(() => restaurantEvents.onIndexRestaurants(prevDefaultAble))
     .then(wingUi.onCreateWingSuccess)
@@ -25,7 +24,6 @@ const onUpdateWing = function (event) {
   const wingId = $(event.target).data('wingid')
   const data = getFormFields(event.target)
   data.wing.wingId = wingId
-  console.log(data)
   wingApi
     .updateWing(restId, data)
     .then(() => restaurantEvents.onIndexRestaurants(prevDefaultAble))
