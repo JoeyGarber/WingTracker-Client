@@ -1,0 +1,72 @@
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    background-color: rgba(235, 64, 52, 1);
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Oswald',
+    sans-serif;
+}
+
+button {
+    border: none;
+    background-color: rgba(250, 245, 138, 1);
+    text-align: center;
+    text-decoration: none;
+}
+
+p, h4, h5 {
+    color: rgba(250, 245, 138, 1);
+    font-family: 'Oswald', sans-serif;
+}
+
+
+
+.topnav {
+    display: none;
+}
+
+#not-navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+#resource-forms {
+    display: none;
+}
+
+#wings-table {
+    display: none;
+}
+
+#searchbar {
+    display: none;
+    font-family: 'Oswald',
+    sans-serif;
+}
+
+td {
+    vertical-align: top;
+    text-align: left;
+}
+
+#wings-table, #wings-table > th {
+    border: 1px solid;
+}
+
+th, td {
+    padding: 5px;
+    font-family: 'helvetica', 'serif';
+}
+
+form {
+    font-family: 'helvetica',
+    'serif';
+}
+
+form > button {
+    font-family: 'Oswald',
+    sans-serif;
+}
